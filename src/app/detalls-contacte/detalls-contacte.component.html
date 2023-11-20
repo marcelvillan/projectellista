@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Detalls de contacte</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p><strong>Nom:</strong> {{ contact.nom }}</p>
+    <p><strong>Email:</strong> {{ contact.correu }}</p>
+    <p><strong>Telèfon:</strong> {{ contact.telefon }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="deleteContact()">Esborra contacte</button>
+
+    <button mat-raised-button color="primary" (click)="goBack()">Enrera</button>
+  </mat-card-actions>
+</mat-card>

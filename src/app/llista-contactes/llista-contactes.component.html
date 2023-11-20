@@ -1,0 +1,31 @@
+<mat-expansion-panel *ngFor="let contacte of contactes">
+  <mat-expansion-panel-header>
+    {{ contacte.nom }}
+
+
+  </mat-expansion-panel-header>
+  <p>{{ contacte.correu }} - {{ contacte.telefon }}</p>
+
+  <button mat-raised-button color="primary" [routerLink]="['/detalls', contacte.id]">Detalls</button>
+</mat-expansion-panel>
+
+<mat-card class="add-contact-form-box">
+  <mat-card-content>
+    <h2>Agrega nou contacte</h2>
+    <form (submit)="addContact()">
+      <mat-form-field>
+        <input matInput placeholder="Nom" id="nom" name="nom" [(ngModel)]="newContact.nom" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" type="email" id="correu" name="correu" [(ngModel)]="newContact.correu" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Telèfon" type="tel" id="telefon" name="telefon" [(ngModel)]="newContact.telefon" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Agrega contacte</button>
+    </form>
+  </mat-card-content>
+</mat-card>
